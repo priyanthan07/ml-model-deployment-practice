@@ -146,6 +146,17 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
+#environments
+.artifacts
+.env
+.venv
+env/
+venv/
+ENV/
+ENV.bak/
+VENV.bak/
+
+
 # pytype static type analyzer
 .pytype/
 
