@@ -2,12 +2,14 @@ import os
 import sys
 from src.exception import CustomException
 from src.logger import logging
+from src.components.data_transformation import DataTransformation, DataTransformationConfig
 import pandas as pd
 
 from dataclasses import dataclass
 from sklearn.model_selection import train_test_split
 
-# create the class to define the file paths
+
+# create the config to provide all the inputs for DataIngestion
 @dataclass  # this decorator is used to define variables without __init__
 class DataIngestionConfig:
     train_data_path:str = os.path.join("artifacts","train.csv")
@@ -53,5 +55,8 @@ class DataIngestion:
         
 
 if __name__ == "__main__":
-    obj = DataIngestion()
-    obj.initiate_data_ingestion()
+    data_injestion = DataIngestion()
+    train_data, test_data = data_injestion.initiate_data_ingestion()
+
+    data_transform = DataTransformation()
+    train_arr, test_arr,_ = data_transform.initiate_data_transformation(train_data, test_data)
