@@ -3,8 +3,9 @@ import sys
 from src.exception import CustomException
 from src.logger import logging
 from src.components.data_transformation import DataTransformation, DataTransformationConfig
-import pandas as pd
+from src.components.model_trainer import ModelTrainerConfig, ModelTrainer
 
+import pandas as pd
 from dataclasses import dataclass
 from sklearn.model_selection import train_test_split
 
@@ -60,3 +61,7 @@ if __name__ == "__main__":
 
     data_transform = DataTransformation()
     train_arr, test_arr,_ = data_transform.initiate_data_transformation(train_data, test_data)
+
+    trainer = ModelTrainer()
+    score = trainer.initiate_model_training(train_arr, test_arr)
+    print("r2Score :",score)
