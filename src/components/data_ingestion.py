@@ -11,7 +11,7 @@ from sklearn.model_selection import train_test_split
 
 
 # create the config to provide all the inputs for DataIngestion
-@dataclass  # this decorator is used to define variables without __init__
+@dataclass                             # this decorator is used to define variables without __init__
 class DataIngestionConfig:
     train_data_path:str = os.path.join("artifacts","train.csv")
     test_data_path:str = os.path.join("artifacts","test.csv")
