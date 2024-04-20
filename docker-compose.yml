@@ -2,6 +2,6 @@ version: '3.7'
 
 services:
   Student-Performance:
-    image: Student-Performance
+    image: Student-Performance:version1
     ports:
       - 8000:8000
