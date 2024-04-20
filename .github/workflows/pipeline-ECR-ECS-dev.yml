@@ -33,12 +33,12 @@ on:
 env:
   AWS_REGION: us-east-1                                             # set this to your preferred AWS region, e.g. us-west-1
   ECR_REPOSITORY: studentperformance-ecr-1                          # set this to your Amazon ECR repository name
-  ECS_SERVICE: MY_ECS_SERVICE                                       # set this to your Amazon ECS service name
-  ECS_CLUSTER: MY_ECS_CLUSTER                                       # set this to your Amazon ECS cluster name
-  ECS_TASK_DEFINITION: .aws/studentperformance-task-definition           # set this to the path to your Amazon ECS task definition
-                                                                    # file, e.g. .aws/task-definition.json
-  CONTAINER_NAME: MY_CONTAINER_NAME           # set this to the name of the container in the
-                                               # containerDefinitions section of your task definition
+  ECS_SERVICE: studentperformance-service-1                                       # set this to your Amazon ECS service name
+  ECS_CLUSTER: studentperformance-cluster-1                                       # set this to your Amazon ECS cluster name
+  ECS_TASK_DEFINITION: .aws/studentperformance-task-definition-1          # set this to the path to your Amazon ECS task definition
+                                                                          # file, e.g. .aws/task-definition.json
+  CONTAINER_NAME: studentperformance-container-1                          # set this to the name of the container in the
+                                                                          # containerDefinitions section of your task definition
 
 permissions:
   contents: read
